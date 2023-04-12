@@ -6,19 +6,15 @@ id:
 
 # Optional parameters.
 scanners:
-  - sast
   - secret
  
 languages:
   - python
   - javascript
-     
-dast:
-  url: <your.url.com>
-  full_scan: true #true|false
+
 
 resource:
   serial_scan: true #true|false
 
 fail_pipeline:
-  risk_rating: <5>
+  risk_rating: 6
