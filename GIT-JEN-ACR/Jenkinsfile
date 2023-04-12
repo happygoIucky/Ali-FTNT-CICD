@@ -1,17 +1,7 @@
-
-pipeline {
-
-
-    //def app
-   agent any
-
-stages{
-
-node {
-
-    def app
-
+node{
+def app
  stage('Clone repository') {
+
 
         //def app
         /* Let's make sure we have the repository cloned to our workspace */
@@ -45,5 +35,5 @@ steps{
 }
 
 
-}
-}
+
+
