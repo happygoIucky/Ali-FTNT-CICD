@@ -31,7 +31,7 @@ steps{
         docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
 
                 app.pull("latest")
-                app.run ("registry.fortidevsec.forticloud.com/fdevsec_dast:latest")
+                //app.run ("registry.fortidevsec.forticloud.com/fdevsec_dast:latest")
 
             
         }     
