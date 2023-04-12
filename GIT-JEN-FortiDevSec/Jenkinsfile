@@ -6,13 +6,13 @@ def app
     
  }
 
- stage('Shell script 0') {
+ stage('Scan My Source Code') {
    
       script
       {
-         bat 'cd GIT-JEN-ACR'
+        bat 'cd GIT-JEN-FortiDevSec'
         bat 'docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
-        bat 'docker run --rm --mount type=bind,source=C:/ProgramData/Jenkins/.jenkins/workspace/FTNT/GIT-JEN-ACR,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'       
+        bat 'docker run --rm --mount type=bind,source=C:/ProgramData/Jenkins/.jenkins/workspace/FTNT/GIT-JEN-FortiDevSec,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'       
             
         }     
            
