@@ -17,7 +17,7 @@ def app
         
       script
       {
-         bat 'cd GIT-JEN-ACR'
+         bat 'cd GIT-JEN-ACzR'
       //      docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
        // bat 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
         bat 'docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
