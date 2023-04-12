@@ -47,6 +47,7 @@ node {
         docker.withRegistry('https://registry-intl.ap-southeast-1.aliyuncs.com/jawnns/jawnrepo3','ack-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
+            
            
           
         }
