@@ -1,5 +1,8 @@
 pipeline {
+
+    def app
    agent any
+
 stages{
 
 
@@ -22,7 +25,7 @@ steps{
       {
         docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
 
-            docker.pull("latest")
+            app.pull("latest")
             
         }     
            
