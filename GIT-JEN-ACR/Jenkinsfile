@@ -22,14 +22,14 @@ steps{
       steps {
 
          bat 'cd GIT-JEN-ACR'
-     // script
-      //{
+      script
+      {
        
         docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
 
   //          app.pull("latest")
             
-    //    }     
+        }     
            
       }
      //  docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
