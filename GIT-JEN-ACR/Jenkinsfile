@@ -25,9 +25,10 @@ steps{
       script
       {
        
-        docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
+        docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
 
   //          app.pull("latest")
+
             
         }     
            
