@@ -17,5 +17,4 @@ Jenkins
   FortiDevSec
   - you can use run this normally or automatically.
   - Guide : https://docs.fortinet.com/document/fortidevsec/23.1.a/user-guide/546812/introduction
-  - Set your Risk Rating. if exceed the threshold, entire pipeline will fail
 
