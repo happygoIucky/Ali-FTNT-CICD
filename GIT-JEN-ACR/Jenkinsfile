@@ -2,9 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Checkout Scm') {
-      steps {
-        git 'https://github.com/jawn-lim/Ali-FTNT-CICD.git'
-      }
+       checkout scm
     }
 
  
