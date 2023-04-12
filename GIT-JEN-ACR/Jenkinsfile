@@ -18,8 +18,9 @@ def app
       script
       {
        
-        docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
-            app = docker.run ('registry.fortidevsec.forticloud.com/fdevsec_sast:latest')
+      //  docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
+        docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest 
+            //app = docker.run ('registry.fortidevsec.forticloud.com/fdevsec_sast:latest')
 
                 //app.pull("latest")
             //app.run ("registry.fortidevsec.forticloud.com/fdevsec_dast:latest")
