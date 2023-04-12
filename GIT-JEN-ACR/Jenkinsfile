@@ -5,14 +5,14 @@ def app
 
         //def app
         /* Let's make sure we have the repository cloned to our workspace */
-steps{
+
         checkout scm
-    }
+    
  }
 
  stage('Shell script 0') {
    
-      steps {
+      
 
          bat 'cd GIT-JEN-ACR'
       script
@@ -30,7 +30,7 @@ steps{
      //  docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
 // docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'''
          
-    }
+    
   }
 }
 
