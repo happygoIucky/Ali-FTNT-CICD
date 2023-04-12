@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Scm') {
       steps {
-        git url: 'https://github.com/jawn-lim/Ali-FTNT-CICD.git'
+        Checkout scm
       }
     }
 
