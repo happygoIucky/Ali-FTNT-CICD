@@ -12,7 +12,7 @@ steps{
    
       steps {
 
-         sh 'GIT-JEN-ACR'
+         sh 'cd GIT-JEN-ACR'
          
         sh '''env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env
 docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
