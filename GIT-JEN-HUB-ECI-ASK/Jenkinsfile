@@ -1,0 +1,59 @@
+node {
+    environment {
+        dockerImage = ""
+        //registryCredential = 'jawn-hub'
+
+    }
+
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
+    }
+
+    
+
+    stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+   
+         dir("GIT-JEN-HUB-ECI-ASK")
+{
+    script
+    {
+        //app = docker.build("GIT-JEN-HUB-ECI-ASK", "-f ./GIT-JEN-HUB-ECI-ASK/Dockerfile .")
+      // dockerImage = docker.build("jawnlim89/jawn-hub:${env.BUILD_TAG}")
+      dockerImage = docker.build("jawnlim89/jawn-hub")
+       // sh 'docker build -t jawnlim/jawn-hub .'
+       
+
+}
+        
+        //sh "sudo docker build -t cicddemo:${tag_version} ."
+        //sh "sudo docker tag cicddemo:${tag_version} ${acr_url}/${acr_namespace}/${acr_repo_name}:${tag_version}"
+    
+    }
+    }
+    stage('Test'){
+          
+                 echo 'Empty'
+            
+        }
+        
+    stage('Push image') {
+     
+        script {
+             docker.withRegistry( '', 'jawn-hub' ) { 
+                        dockerImage.push() 
+        }
+       }
+       // docker.withRegistry( '', registryCredential ) {
+         //   dockerImage.push("${env.BUILD_NUMBER}")
+           // dockerImage.push("latest")
+           
+          
+        }
+    
+    }
+
