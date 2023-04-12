@@ -1,6 +1,7 @@
 pipeline {
 
-    def app
+node{
+    //def app
    agent any
 
 stages{
@@ -21,13 +22,13 @@ steps{
       steps {
 
          bat 'cd GIT-JEN-ACR'
-      script
-      {
-        docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
+     // script
+      //{
+//        docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
 
-            app.pull("latest")
+  //          app.pull("latest")
             
-        }     
+    //    }     
            
       }
      //  docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
