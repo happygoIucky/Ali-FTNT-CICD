@@ -2,39 +2,21 @@ node{
 def app
  stage('Clone repository') {
 
-
-        //def app
-        /* Let's make sure we have the repository cloned to our workspace */
-
         checkout scm
     
  }
 
  stage('Shell script 0') {
    
-      
-
-        
       script
       {
          bat 'cd GIT-JEN-ACR'
-      //      docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
-       // bat 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
         bat 'docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
         bat 'docker run --rm --mount type=bind,source=C:/ProgramData/Jenkins/.jenkins/workspace/FTNT/GIT-JEN-ACR,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'       
-       //bat 'docker run --rm --mount type=bind,source=C:/ProgramData/Jenkins/.jenkins/workspace/FTNT/GIT-JEN-ACR,target=/scan --mount type=bind,source="$(pwd)"/git-jen-acr,target=/scanner registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
-          // bat 'docker run -ti --rm --mount type=bind,source="$(pwd)",target=/scan --mount type=bind,source="$(pwd)"/<scan>,target=/scanner registry.fortidevsec.forticloud.com/fdevsec_sast:latest' //app = docker.run ('registry.fortidevsec.forticloud.com/fdevsec_sast:latest')
-
-                //app.pull("latest")
-            //app.run ("registry.fortidevsec.forticloud.com/fdevsec_dast:latest")
-
             
         }     
            
-      }
-     //  docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
-// docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'''
-         
+      }         
     
   }
 
