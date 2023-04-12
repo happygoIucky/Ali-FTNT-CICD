@@ -19,8 +19,9 @@ def app
       {
        
       //  docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast:latest') {
+        bat 'env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env'
         bat 'docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
-        bat 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
+        //bat 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
             //app = docker.run ('registry.fortidevsec.forticloud.com/fdevsec_sast:latest')
 
                 //app.pull("latest")
