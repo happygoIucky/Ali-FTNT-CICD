@@ -137,7 +137,7 @@ resource "alicloud_cs_kubernetes_node_pool" "flannel" {
   # The number of worker nodes in the Kubernetes cluster. Default value: 3. Maximum value: 50. 
   desired_size          = 1
   # The password that is used to log on to the cluster by using SSH. 
-  password              = var.password
+  password              = 123456789
 
   # Specify whether to install the CloudMonitor agent on the nodes in the cluster. 
   install_cloud_monitor = true

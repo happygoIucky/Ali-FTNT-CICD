@@ -5,6 +5,7 @@ const express = require('express');
 // Constants
 const PORT = 8888;
 const HOST = '0.0.0.0';
+JWT_SECRET=mfefkuhio3k2rjkofn2mbikbkwjhnkj
 
 // App
 const app = express();
