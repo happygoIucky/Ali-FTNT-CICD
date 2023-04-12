@@ -22,7 +22,8 @@ steps{
       {
         docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
 
-            pull("latest")
+            docker.pull("latest")
+            
         }     
            
       }
