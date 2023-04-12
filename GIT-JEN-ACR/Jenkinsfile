@@ -6,7 +6,7 @@ stages{
 
  stage('Clone repository') {
 
-        def app
+        //def app
         /* Let's make sure we have the repository cloned to our workspace */
 steps{
         checkout scm
@@ -22,7 +22,7 @@ steps{
       {
         docker.withRegistry('registry.fortidevsec.forticloud.com/fdevsec_sast') {
 
-            app.pull("latest")
+            pull("latest")
         }     
            
       }
