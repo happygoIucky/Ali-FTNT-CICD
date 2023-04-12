@@ -12,7 +12,7 @@ steps{
    
       steps {
 
-         sh 'cd GIT-JEN-ACR'
+         bat 'cd GIT-JEN-ACR'
          
        
       }
