@@ -1,25 +1,19 @@
-node {
-    def app
-
-    stage('Clone repository') {
-        /* Let's make sure we have the repository cloned to our workspace */
-
-        checkout scm
+pipeline {
+  agent any
+  stages {
+    stage('Checkout Scm') {
+      steps {
+        git 'https://github.com/jawn-lim/Ali-FDSO.git'
+      }
     }
 
-  
- 
     stage('Shell script 0') {
-   
-        sh 'sh.sh'
-    
-      
-}
-    
+      steps {
+        sh '''env | grep -E "JENKINS_HOME|BUILD_ID|GIT_BRANCH|GIT_COMMIT" > /tmp/env
+docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+docker run --rm --env-file /tmp/env --mount type=bind,source=/c/ProgramData/Jenkins/.jenkins/workspace/400/GIT-JEN-ACR,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'''
+      }
+    }
 
-
-  
-
-
-    
+  }
 }
