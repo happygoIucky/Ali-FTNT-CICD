@@ -168,13 +168,14 @@ resource "alicloud_cs_kubernetes_node_pool" "flannel" {
 
 }
 
-
 resource "kubernetes_deployment" "nginx_deployment_basic" {
+  
   metadata {
     name = "nginx-deployment-basic"
-
+    namespace = "default"
     labels = {
       app = "nginx"
+ 
     }
   }
 
@@ -184,23 +185,29 @@ resource "kubernetes_deployment" "nginx_deployment_basic" {
     selector {
       match_labels = {
         app = "nginx"
+        //type = "LoadBalancer"
       }
     }
-
+  
     template {
       metadata {
         labels = {
           app = "nginx"
+          "alibabacloud.com/eci" = "true"
+
         }
       }
 
       spec {
         container {
           name  = "nginx"
-          image = "nginx:1.7.9"
-
+          //image = "nginx:1.7.9"
+          image = "jawnlim89/jawn-hub:latest"
           port {
-            container_port = 80
+            container_port = 8888
+            protocol = "TCP"
+            //targetPort = 8888
+
           }
 
           resources {
@@ -212,5 +219,7 @@ resource "kubernetes_deployment" "nginx_deployment_basic" {
       }
     }
   }
+
+
 }
 
