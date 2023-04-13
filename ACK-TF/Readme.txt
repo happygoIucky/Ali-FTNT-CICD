@@ -7,3 +7,4 @@ Ref to : https://www.alibabacloud.com/help/en/alibaba-cloud-cli/latest/windows
  - aliyun configure --profile <AnyRandomProfileName>
 Ref to : https://www.alibabacloud.com/help/en/alibaba-cloud-cli/latest/interactive-configuration#section-5pj-p7j-06z
 3) Deployment of nginx automatically in the cluster
+4) 
