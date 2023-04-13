@@ -70,6 +70,7 @@ resource "alicloud_vswitch" "vswitches" {
 
 # The ACK managed cluster. 
 resource "alicloud_cs_managed_kubernetes" "flannel" {
+
   # The name of the cluster. 
   name                      = local.k8s_name_flannel
   # Create an ACK Pro cluster. 
@@ -93,6 +94,7 @@ resource "alicloud_cs_managed_kubernetes" "flannel" {
   # The logs of the control plane. 
   control_plane_log_components = ["apiserver", "kcm", "scheduler", "ccm"]
 
+ 
   # The components. 
   dynamic "addons" {
     for_each = var.cluster_addons_flannel
@@ -102,6 +104,12 @@ resource "alicloud_cs_managed_kubernetes" "flannel" {
       # disabled = lookup(addons.value, "disabled", var.cluster_addons_flannel)
     }
   }
+
+  
+   addons { 
+    name = "security-inspector"
+    disabled = false
+     }
 
   # The container runtime. 
  // runtime_name = "docker"
