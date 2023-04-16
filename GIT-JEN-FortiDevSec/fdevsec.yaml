@@ -8,6 +8,7 @@ id:
 scanners:
   - secret
   - iac
+
  
 languages:
   - python
@@ -18,4 +19,4 @@ resource:
   serial_scan: true #true|false
 
 fail_pipeline:
-  risk_rating: 5
+  risk_rating: 7
